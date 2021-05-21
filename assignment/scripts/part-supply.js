@@ -42,7 +42,7 @@ for (let i=0; i<supplyChanges.length; i++) {
     console.log('Part count', supplyChanges[i]);
   }
 }
-
+// TO DO
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
