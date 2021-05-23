@@ -20,7 +20,7 @@ console.log('2. Array of supplyChanges:', supplyChanges);
 // 3. Console log the value of 'supplyChanges' at index 2
 console.log('3. Item at index 2 is:', supplyChanges[2]);
 
-// 4. The last item was added by mistake. Remove it from the 'supplyChanges'
+// 4. The last item was added by mistake. Remove it f rom the 'supplyChanges'
 //    array & console.log the value removed.
 let removedItem = supplyChanges.pop();
 console.log('4. Removed item:', removedItem);
@@ -47,11 +47,30 @@ for (let i=0; i<supplyChanges.length; i++) {
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
+for (changedParts of supplyChanges){
+  if (changedParts<0){
+    console.log('Part count', changedParts);
+  } else if (changedParts>0)
+  console.log('Added', changedParts, 'parts');
+}
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+let index = 0
+while (index < supplyChanges.length){
+  if (supplyChanges[index]>0){
+    console.log('Added', supplyChanges[index], 'parts');
+  } else if (supplyChanges[index]<0){
+    console.log('Part count', supplyChanges[index]);
+  } else if (supplyChanges[index]===0){
+  }
+  index++;
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
-console.log('9. Total supplies available is:');
+totalParts = 0
+for(let i=0; i<supplyChanges.length; i++){
+  totalParts = totalParts + supplyChanges[i]
+}
+console.log('9. Total supplies available is:', totalParts);
